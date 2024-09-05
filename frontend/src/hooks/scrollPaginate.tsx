@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+//HOOK TO FACILITATE INFINITE SCROLL PAGINATION
 const useFetchOnPageEnd = (
   isFetchingNext: boolean,
   hasNext: boolean,
@@ -7,12 +8,11 @@ const useFetchOnPageEnd = (
 ) => {
   useEffect(() => {
     const handleScroll = () => {
-      if (
-        hasNext &&
-        !isFetchingNext &&
+      const scrollAtButtom =
         window.innerHeight + document.documentElement.scrollTop >=
-          document.documentElement.offsetHeight
-      ) {
+        document.documentElement.offsetHeight;
+
+      if (hasNext && !isFetchingNext && scrollAtButtom) {
         fetchNext();
       }
     };

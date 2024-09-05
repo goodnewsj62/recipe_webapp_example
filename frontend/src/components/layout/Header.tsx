@@ -44,7 +44,11 @@ const Header: React.FC<HeaderProps> = ({}) => {
       </nav>
 
       <div className="ml-auto lg:hidden">
-        <button className="[appearance:none]" onClick={toggleBar}>
+        <button
+          id="mob__bar"
+          className="[appearance:none]"
+          onClick={() => toggleBar()}
+        >
           <IoMenuSharp size={"30"} />
         </button>
       </div>
