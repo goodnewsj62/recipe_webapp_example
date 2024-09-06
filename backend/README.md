@@ -6,33 +6,37 @@
 
 - run npm install to install all packages\
 
-```
+```bash
 npm install
 ```
 
 - To setup the application copy the content from .env.example to .env
 
+- create an upload thing account to get upload thing secret an id "We are using upload thing to store files for free" [uploadthing](https://uploadthing.com)
+
+- alternatively there is an /image route to store files locally which may require extra code adjustment in the frontend to use
+
 - make sure you also have docker installed on your machine
 
 - now run
 
-```
+```bash
 ~$: docker compose up
 ```
 
 - now open another terminal and run the below commad to apply migrations
 
-```
+```bash
 npx prisma migrate dev
 ```
 
 - finally run the command to start the server locally
 
-```
+```bash
 npm run dev
 ```
 
-# Structure
+## Structure
 
 This project currently use the layered architecture aproach...
 
